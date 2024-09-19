@@ -3,7 +3,9 @@ import React from "react";
 import img from "../assets/sam-3d.png";
 import { SlArrowRight } from "react-icons/sl";
 import { motion } from "framer-motion";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
+import TransitionLink from '../utils/TransitionLink'
 import goalImg1 from "../assets/goals/goal-1.png";
 
 const AboutCard = ({ title, text, bg, link }) => {
@@ -34,8 +36,13 @@ const AboutCard = ({ title, text, bg, link }) => {
 
 const GoalCard = ({ title, text, img, link }) => {
   return (
-    <motion.div className="min-w-[200px] bg-white rounded-[20px] shadow-2xl overflow-hidden p-[20px] text-center">
-      <img src={img} className="w-[120px] h-[120px] object-cover" alt="goal" />
+    <motion.div className="relative flex flex-col justify-between items-start min-w-[200px] min-h-[200px] bg-white rounded-[20px] shadow-2xl overflow-hidden p-[20px] text-center">
+      <img src={img} className="w-[120px] h-[120px] object-cover absolute bottom-0 right-[-15%]" alt="goal" />
+      <div className="z-10">
+        <h3 className="font-semibold text-xl text-left text-primary-dark">{title}</h3>
+        {/* <p className="text-sm max-w-[80%] text-center">{text}</p> */}
+      </div>
+      <a href="/goals" className="bg-primary-dark p-3 rounded-full flex items-center justify-center w-fit"><RxDoubleArrowRight className="text-white text-3xl" /></a>
     </motion.div>
   );
 };
@@ -82,12 +89,12 @@ const HomeMobile = () => {
         il primo passo verso il fonto...
       </p>
 
-      <a
+      <TransitionLink
         href="/fondo"
         className="mt-8 block mx-auto w-fit py-3 px-8 gradient-1 text-white rounded-3xl"
       >
         Perché il fondo?
-      </a>
+      </TransitionLink>
       <div className="px-[1rem] w-full flex gap-5 mt-[60px]">
         <AboutCard
           link="qanda"

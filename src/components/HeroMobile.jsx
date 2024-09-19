@@ -2,6 +2,7 @@ import React from 'react'
 
 import img from '../assets/sam-3d.png'
 import { FaArrowRight } from "react-icons/fa";
+import TransitionLink from '../utils/TransitionLink';
 
 
 const HeroMobile = () => {
@@ -30,13 +31,13 @@ const HeroMobile = () => {
       );
 
   return (
-    <div className='flex md:hidden h-[100vh] flex-col justify-between py-10'>
+    <div className='flex md:hidden h-[100vh] flex-col justify-between'>
         <div>
         <img src={img} className='w-[487px] h-[487px] object-cover' alt='zio sam' /> 
         <h2 className='text-center mt-5 text-6xl text-primary-dark'>{days}G {hours}:{minutes}H</h2>
         <p className='text-primary-dark text-sm text-center'>Il primo passo verso il fondo....</p>
         </div>
-        <a href="/home" className='bg-primary-dark hover:bg-[#5f1531] p-5 rounded-3xl w-fit mx-auto flex items-center justify-center'><FaArrowRight className='text-white text-2xl' /></a>
+        <TransitionLink href="/home" className='bg-primary-dark hover:bg-[#5f1531] p-5 rounded-3xl w-fit mx-auto flex items-center justify-center mb-[10%]'><FaArrowRight className='text-white text-2xl' /></TransitionLink>
     </div>
   )
 }

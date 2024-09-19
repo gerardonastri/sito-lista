@@ -18,6 +18,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition-property: opacity, background, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
 }
 
 code {
@@ -27,4 +30,10 @@ code {
 
 .gradient-1{
   background: linear-gradient(90deg, #DC3D79 0%, #9C2A56 50%, #741E40 100%);
+}
+.page-transition{
+  opacity: 0;
+  background-color: black;
+  transform: translateY(40px);
+  filter: blur(12px);
 }
