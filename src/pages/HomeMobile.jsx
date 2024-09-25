@@ -7,6 +7,13 @@ import { RxDoubleArrowRight } from "react-icons/rx";
 
 import TransitionLink from '../utils/TransitionLink'
 import goalImg1 from "../assets/goals/goal-1.png";
+import Fixbar from "../components/Fixbar";
+
+//icons
+import { BiHomeAlt2 } from "react-icons/bi";
+import { CiTimer } from "react-icons/ci";
+import { FaPeopleGroup } from "react-icons/fa6";
+
 
 const AboutCard = ({ title, text, bg, link }) => {
   return (
@@ -77,6 +84,13 @@ const HomeMobile = () => {
 
   return (
     <div className="py-10">
+      <Fixbar
+        links={[
+          {icon: <BiHomeAlt2 className='w-[28px] h-[28px] text-white' />, link: "home"},
+          {icon: <CiTimer className='w-[28px] h-[28px] text-white' />, link: ""},
+          {icon: <FaPeopleGroup className='w-[28px] h-[28px] text-white' />, link: "about"},
+        ]}
+      />
       <img
         src={img}
         className="w-[487px] h-[487px] object-cover"
