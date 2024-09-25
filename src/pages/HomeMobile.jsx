@@ -97,7 +97,7 @@ const HomeMobile = () => {
       </TransitionLink>
       <div className="px-[1rem] w-full flex gap-5 mt-[60px]">
         <AboutCard
-          link="qanda"
+          link="domande"
           title="Q&A"
           text="delle domande alle quali potrebbe piacerti vederci rispondere"
           bg="white"

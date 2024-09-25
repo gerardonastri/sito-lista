@@ -61,9 +61,9 @@ const Fondo = () => {
         onDragEnd={handleDragEnd}
         // animate={controls}
          // Inizializzazione e animazione di entrata/uscita con scaling e fade
-         initial={{ opacity: 0, scale: 0.8 }} // Partenza con trasparenza e scalata ridotta
-         animate={{ opacity: 1, scale: 1 }}   // Entrata a piena opacità e dimensione
-         exit={{ opacity: 0, scale: 1.2 }}    // Uscita con aumento leggero della scala
+         initial={{  scale: 0.8 }} // Partenza con trasparenza e scalata ridotta
+         animate={{  scale: 1 }}   // Entrata a piena opacità e dimensione
+        //  exit={{ opacity: 0, scale: 1.2 }}    // Uscita con aumento leggero della scala
          
          // Transizione più fluida
          transition={{ duration: 0.4, ease: 'easeInOut' }} 
