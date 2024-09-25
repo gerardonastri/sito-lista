@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import HomeMobile from './pages/HomeMobile';
 import Fondo from './pages/Fondo';
 import Domande from './pages/Domande';
+import About from './pages/About';
+import AboutDetails from './pages/AboutDetails';
 function App() {
 
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path='/home' element={<HomeMobile />} />
         <Route path='/fondo' element={<Fondo />} />
         <Route path='/domande' element={<Domande />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/about/:id' element={<AboutDetails />} />
       </Routes>
     </Router>
   );
