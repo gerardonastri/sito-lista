@@ -30,7 +30,7 @@ const AboutDetails = () => {
       />
 
       <h3 className="text-primary-dark text-2xl font-gothic text-left mx-2">
-        Virbus <span className="text-primary-light">Unitis</span> 2.0
+      Viribus <span className="text-primary-light">Unitis</span> 2.0
       </h3>
       <h1 className="text-primary-dark mt-16 text-4xl font-gothic text-center mb-3">
         {aboutDetails[id - 1].name}

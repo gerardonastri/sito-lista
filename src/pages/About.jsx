@@ -46,7 +46,7 @@ const About = () => {
       />
 
       <h1 className="text-primary-dark text-3xl font-gothic text-left mx-2">
-        Virbus <span className="text-primary-light">Unitis</span> 2.0
+        Viribus <span className="text-primary-light">Unitis</span> 2.0
       </h1>
       <div className="flex mt-8 flex-col items-center max-w-[90%] mx-auto">
         <h2 className="text-5xl text-primary-dark font-gothic mb-2">Noi</h2>

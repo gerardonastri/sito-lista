@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import img1 from "../assets/fondo-1.png";
-import img2 from "../assets/fondo-2.png";
-import img3 from "../assets/fondo-3.png";
+import img1 from "../assets/goals/goal-1.png";
+import img2 from "../assets/goals/goal-2.png";
+import img3 from "../assets/goals/goal-3.png";
 import { motion, useAnimation } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -13,9 +13,9 @@ import { BiHomeAlt2 } from "react-icons/bi";
 
 const items = [
   {
-    img: img1,
-    title: "Perché il fondo?",
-    text: "",
+    img: img3,
+    title: "I Distributori di acqua",
+    text: "L’introduzione dei distributori di acqua è fondamentale per promuovere salute, sostenibilità e risparmio. Fornire acqua potabile facilmente accessibile aiuta a migliorare l’idratazione, aumentando concentrazione e benessere. Sul piano ambientale, riduce l’uso di bottiglie di plastica monouso, contribuendo a diminuire i rifiuti. Infine, è una scelta economica: i costi di gestione sono inferiori rispetto all’acquisto continuo di bottiglie. In breve, i distributori di acqua offrono una soluzione semplice e sostenibile per migliorare la qualità della vita e ridurre l’impatto ambientale. Motivi per i quali vorremo riuscire ad introdurre i distributori nel nostro contesto scolastico.",
   },
   {
     img: img2,
@@ -29,7 +29,7 @@ const items = [
   },
 ];
 
-const Fondo = () => {
+const Goals = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [active, setActive] = useState(0)
   const controls = useAnimation();
@@ -67,7 +67,7 @@ const Fondo = () => {
   }
 
   return (
-    <div className="pt-10">
+    <div className="pt-10 bg-[#F8F8EE] min-h-[100vh]">
       <Fixbar
         links={[
           {
@@ -108,24 +108,7 @@ const Fondo = () => {
           padding: "20px",
         }}
       >
-        <img src={items[currentIndex].img} alt="" />
-        <div className="flex items-center justify-center gap-2 mt-2 mb-6">
-          <div
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === 0 ? "bg-primary-dark" : "bg-[#D9D9D9]"
-            }`}
-          />
-          <div
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === 1 ? "bg-primary-dark" : "bg-[#D9D9D9]"
-            }`}
-          />
-          <div
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === 2 ? "bg-primary-dark" : "bg-[#D9D9D9]"
-            }`}
-          />
-        </div>
+        <img src={items[currentIndex].img} className="w-[421px] h-[412px] object-cover" alt="" />
         <h2 className="text-3xl text-center font-gothic">
           {items[currentIndex].title}
         </h2>
@@ -140,4 +123,4 @@ const Fondo = () => {
   );
 };
 
-export default Fondo;
+export default Goals;

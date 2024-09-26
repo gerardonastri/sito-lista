@@ -4,10 +4,10 @@ const Fixbar = ({ links }) => {
   const id = window.location.pathname.split("/")[1];
 
   return (
-    <div className=" fixed bottom-6 left-[50%] translate-x-[-50%] flex items-center gap-4 bg-primary-dark py-3 px-4 rounded-[1.5rem] shadow-md">
+    <div className=" fixed bottom-6 left-[50%] translate-x-[-50%] z-50 flex items-center gap-4 bg-primary-dark py-3 px-4 rounded-[1.5rem] shadow-md">
       {links?.map((item, i) => (
         <>
-          {item.link?.length > 0 ? (
+          {(item.link || item.link === "") ? (
             <a
               key={i}
               href={`/${item.link}`}

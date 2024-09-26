@@ -97,7 +97,7 @@ const HomeMobile = () => {
         alt="zio sam"
       />
       <h1 className="text-primary-dark text-6xl font-gothic text-center">
-        Virbus <span className="text-primary-light">Unitis</span> 2.0
+      Viribus <span className="text-primary-light">Unitis</span> 2.0
       </h1>
       <p className="text-sm text-primary-dark text-center">
         il primo passo verso il fonto...
