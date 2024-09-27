@@ -163,7 +163,7 @@ const HomeMobile = () => {
         Viribus <span className="text-primary-light">Unitis</span> 2.0
       </h1>
       <p className="text-sm text-primary-dark text-center">
-        il primo passo verso il fonto...
+        il primo passo verso il fondo...
       </p>
 
       <TransitionLink

@@ -6,6 +6,8 @@ import Domande from './pages/Domande';
 import About from './pages/About';
 import AboutDetails from './pages/AboutDetails';
 import Goals from './pages/Goals';
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
 
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path='/goals' element={<Goals />} />
         <Route path='/about/:id' element={<AboutDetails />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }

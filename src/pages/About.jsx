@@ -20,7 +20,7 @@ const AboutCard = ({ img, name, link }) => (
     <div className="bg-primary-dark w-full py-2 rounded-b-xl">
       <h3 className="text-white text-xl font-bold text-center">{name}</h3>
       <p className="max-w-[80%] mx-auto mt-1 text-[#f2f4f3] text-sm text-center">
-        Canditato rappresentante d'istituto 2024 conn Virinus Unitis
+        Canditato rappresentante d'istituto 2024 con Viribus Unitis 2.0
       </p>
     </div>
   </TransitionLink>

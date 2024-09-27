@@ -41,6 +41,7 @@ const Domande = () => {
     if (currentQuestionIndex < domande.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setActive(0);
+      setShowOtherText(false)
     }
   };
 
@@ -49,6 +50,7 @@ const Domande = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
       setActive(1);
+      setShowOtherText(false)
     }
   };
 
