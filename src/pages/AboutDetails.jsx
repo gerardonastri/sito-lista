@@ -12,7 +12,7 @@ const AboutDetails = () => {
   const { id } = useParams();
 
   return (
-    <div className="pt-8">
+    <div className="pt-8 pb-[100px]">
       <Fixbar
         links={[
           {
@@ -30,7 +30,7 @@ const AboutDetails = () => {
         ]}
       />
 
-<div className="flex flex-row-reverse items-center justify-between">
+      <div className="flex flex-row-reverse items-center justify-between">
         <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
         Viribus <span className="text-primary-light">Unitis</span> 2.0
         </h1>

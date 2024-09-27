@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import img1 from "../assets/goals/goal-1.png";
 import img2 from "../assets/goals/goal-2.png";
 import img3 from "../assets/goals/goal-3.png";
+import img4 from "../assets/goals/goal-4.png";
+import img5 from "../assets/goals/goal-5.png";
+import img6 from "../assets/goals/goal-6.png";
+
 import { motion, useAnimation } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -13,19 +17,40 @@ import TransitionLink from "../utils/TransitionLink";
 
 const items = [
   {
-    img: img3,
-    title: "I Distributori di acqua",
-    text: "L’introduzione dei distributori di acqua è fondamentale per promuovere salute, sostenibilità e risparmio. Fornire acqua potabile facilmente accessibile aiuta a migliorare l’idratazione, aumentando concentrazione e benessere. Sul piano ambientale, riduce l’uso di bottiglie di plastica monouso, contribuendo a diminuire i rifiuti. Infine, è una scelta economica: i costi di gestione sono inferiori rispetto all’acquisto continuo di bottiglie. In breve, i distributori di acqua offrono una soluzione semplice e sostenibile per migliorare la qualità della vita e ridurre l’impatto ambientale. Motivi per i quali vorremo riuscire ad introdurre i distributori nel nostro contesto scolastico.",
+    img: img1,
+    title: "Portale scolastico per studenti",
+    text: "Un portale accessibile solo agli alunni dove poter gestire gli eventi, condividere informazioni, opinioni e suggerimenti",
+    bg: "#EBF0F4"
   },
   {
     img: img2,
-    title: "Le motivazioni",
-    text: "",
+    title: "I Distributori di acqua",
+    text: "L’introduzione dei distributori di acqua è fondamentale per promuovere salute, sostenibilità e risparmio. Fornire acqua potabile facilmente accessibile aiuta a migliorare l’idratazione, aumentando concentrazione e benessere. Sul piano ambientale, riduce l’uso di bottiglie di plastica monouso, contribuendo a diminuire i rifiuti. Infine, è una scelta economica: i costi di gestione sono inferiori rispetto all’acquisto continuo di bottiglie. In breve, i distributori di acqua offrono una soluzione semplice e sostenibile per migliorare la qualità della vita e ridurre l’impatto ambientale. Motivi per i quali vorremo riuscire ad introdurre i distributori nel nostro contesto scolastico.",
+    bg: "#F8F8EE"
   },
   {
     img: img3,
-    title: "Perché noi?",
-    text: "",
+    title: "Distributori di assorbenti",
+    text: "L'introduzione/mantenimento dei distributori di assorbenti nelle scuole è essenziale per garantire benessere e inclusività. Avere accesso gratuito e immediato ai prodotti igienici riduce l'ansia e l'imbarazzo. Questo aiuta a promuove un ambiente scolastico più equo. Inoltre, fornisce un supporto concreto alle studentesse. Introdurre/mantenere i distributori nella nostra scuola è un passo verso l'uguaglianza e il rispetto dei bisogni di tutte le studentesse.",
+    bg: "#F4FBF3"
+  },
+  {
+    img: img4,
+    title: "Eventi Scolastici",
+    text: "Gli eventi scolastici sono sicuramente una delle cose di cui la rappresentanza scolastica si deve curare di più, noi abbiamo in mente di realizzare eventi con collaborazioni che permetteranno di guadagnare fondi che andranno destinati a loro volta per la realizzazione di altri eventi tra cui la GDA. Gli eventi che abbiamo in mente di realizzare dovranno essere unici e nonostante le collaborazioni saranno completamente organizzati da noi.",
+    bg: "#E9F8FB"
+  },
+  {
+    img: img5,
+    title: "Annuario online (costo 0)",
+    text: "L’annuario scolastico è sempre stato un obiettivo delle scorse rappresentanze ma i costi di produzione di un annuario sono molto elevati, noi riusciremo a creare un annuario a costo zero completamente online e in pdf in maniera da ridurre i costi e poterlo offrire a tutti gli studenti in maniera completamente gratuita.",
+    bg: "#FDFDFD"
+  },
+  {
+    img: img6,
+    title: "Partita di istituto ed eventi sportivi",
+    text: "Gli eventi sportivi hanno sempre caratterizzato il fascino delle nostre rappresentanze e continuerà a farlo... la partita d’istituto dovrà essere svolta durante l’assemblea d’istituto con le solite modalità ma con l’introduzione di contenuti digitali che verranno pubblicati dopo e durante la partita.",
+    bg: "#FDFDFD"
   },
 ];
 
@@ -68,7 +93,7 @@ const Goals = () => {
   };
 
   return (
-    <div className="pt-10 bg-[#F8F8EE] min-h-[100vh]">
+    <div className={`pt-10 bg-[${items[currentIndex].bg}] min-h-[100vh] pb-[150px]`}>
       <Fixbar
         links={[
           {
@@ -123,10 +148,7 @@ const Goals = () => {
           {items[currentIndex].title}
         </h2>
         <p className="mt-10 text-sm text-center">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
-          ullam, totam ad, suscipit maxime, nobis debitis consequatur odio eum
-          facilis officia expedita qui doloribus nesciunt quis molestias
-          consectetur repudiandae. Est!
+          {items[currentIndex].text}
         </p>
       </motion.div>
     </div>

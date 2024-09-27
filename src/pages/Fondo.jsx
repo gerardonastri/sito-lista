@@ -16,17 +16,17 @@ const items = [
   {
     img: img1,
     title: "Perché il fondo?",
-    text: "",
+    text: "Il fondo è libertà. È il momento in cui smetti di aggrapparti a ciò che il mondo ti dice che dovresti essere, e inizi a vedere chi sei veramente. Perché solo quando hai perso tutto, sei finalmente libero di fare qualsiasi cosa.",
   },
   {
     img: img2,
     title: "Le motivazioni",
-    text: "",
+    text: "Toccare il fondo è l’atto di demolizione necessario, è ripulire il terreno per poi ricostruire dalle radici. Solo quando non resta più nulla, sei libero di diventare ciò che vuoi",
   },
   {
     img: img3,
     title: "Perché noi?",
-    text: "",
+    text: "Perché crediamo nella trasparenza e nell'onestà. Abbiamo imparato che solo affrontando la realtà senza maschere si può costruire qualcosa di solido e duraturo.",
   },
 ];
 
@@ -136,10 +136,7 @@ const Fondo = () => {
           {items[currentIndex].title}
         </h2>
         <p className="mt-10 text-sm text-center">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
-          ullam, totam ad, suscipit maxime, nobis debitis consequatur odio eum
-          facilis officia expedita qui doloribus nesciunt quis molestias
-          consectetur repudiandae. Est!
+          {items[currentIndex].text}
         </p>
       </motion.div>
     </div>

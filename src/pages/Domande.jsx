@@ -25,6 +25,12 @@ const Domande = () => {
     "Come intendete coinvolgere gli studenti nella vostra campagna?",
     "Quali sono le tue priorità principali per migliorare la vita studentesca?",
   ];
+  const risposte = [
+    "L’incompetenza e il non rispetto stanno diventanto un “must” in questa scuola e abbiamo scelto di provare a ridare dignità agli studenti",
+    "I nostri obiettivi hanno tutti la stessa importanza. Visitate la pagina obiettivi per scoprire quali sono.",
+    "Il nostro piano prevede uno sportello di ascolto per gli studenti e idee per nuove realizzazioni.",
+    "Vogliamo ridare un'unità studentesca persa in questi anni attraverso una organizzazione di eventi SOLO per la scuola.",
+  ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showOtherText, setShowOtherText] = useState(false);
@@ -101,9 +107,7 @@ const Domande = () => {
                 showOtherText ? "block" : "hidden"
               } text-center mt-4 mx-2 text-primary-dark text-md text-semibold`}
             >
-              L’incompetenza e il non rispetto stanno diventanto un “must” in
-              questa scuola e abbiamo scelto di provare a ridare dignità agli
-              studenti
+              {risposte[currentQuestionIndex]}
             </p>
           </motion.div>
         </AnimatePresence>

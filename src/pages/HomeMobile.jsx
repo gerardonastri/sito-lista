@@ -83,7 +83,7 @@ const HomeMobile = () => {
   ];
 
   return (
-    <div className="py-10">
+    <div className="py-10 pb-[100px]">
       <Fixbar
         links={[
           {icon: <BiHomeAlt2 className='w-[28px] h-[28px] text-white' />, link: "home"},

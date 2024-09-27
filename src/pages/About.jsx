@@ -28,7 +28,7 @@ const AboutCard = ({ img, name, link }) => (
 
 const About = () => {
   return (
-    <div className="pt-8">
+    <div className="pt-8 pb-[100px]">
       <Fixbar
         links={[
           {
