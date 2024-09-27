@@ -93,7 +93,7 @@ const Goals = () => {
   };
 
   return (
-    <div className={`pt-10 bg-[${items[currentIndex].bg}] min-h-[100vh] pb-[150px]`}>
+    <div className={`pt-10 bg-[${items[currentIndex].bg}] min-h-[100vh] pb-[150px]`} style={{background: items[currentIndex].bg}}>
       <Fixbar
         links={[
           {

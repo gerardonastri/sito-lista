@@ -68,7 +68,7 @@ const Fondo = () => {
   }
 
   return (
-    <div className="pt-10">
+    <div className="pt-10 pb-[100px]">
       <Fixbar
         links={[
           {
