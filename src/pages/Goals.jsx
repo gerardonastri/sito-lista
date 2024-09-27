@@ -9,7 +9,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 import Fixbar from "../components/Fixbar";
 import { BiHomeAlt2 } from "react-icons/bi";
-
+import TransitionLink from "../utils/TransitionLink";
 
 const items = [
   {
@@ -31,7 +31,7 @@ const items = [
 
 const Goals = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
   const controls = useAnimation();
 
   // Funzione per cambiare slide manualmente (con il pulsante)
@@ -54,17 +54,18 @@ const Goals = () => {
   };
 
   const handleClick = (dir) => {
-    if(dir === 'left'){
-      if(currentIndex > 0){
-        const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+    if (dir === "left") {
+      if (currentIndex > 0) {
+        const prevIndex =
+          currentIndex === 0 ? items.length - 1 : currentIndex - 1;
         setCurrentIndex(prevIndex);
-        setActive(1)
-      } 
+        setActive(1);
+      }
     } else {
-      nextSlide()
-      setActive(0)
+      nextSlide();
+      setActive(0);
     }
-  }
+  };
 
   return (
     <div className="pt-10 bg-[#F8F8EE] min-h-[100vh]">
@@ -77,19 +78,24 @@ const Goals = () => {
           {
             icon: <FaArrowLeftLong className="w-[28px] h-[28px] text-white" />,
             onClick: () => handleClick("left"),
-            active: active === 1
+            active: active === 1,
           },
           {
             icon: <FaArrowRightLong className="w-[28px] h-[28px] text-white" />,
             onClick: () => handleClick("right"),
-            active: active === 0
+            active: active === 0,
           },
         ]}
       />
 
-      <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
-      Viribus <span className="text-primary-light">Unitis</span> 2.0
-      </h1>
+      <div className="flex flex-row-reverse items-center justify-between">
+        <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
+          Viribus <span className="text-primary-light">Unitis</span> 2.0
+        </h1>
+        <TransitionLink href="/home" className="pl-4">
+          <FaArrowLeftLong className="text-3xl font-gothic text-primary-dark" />
+        </TransitionLink>
+      </div>
       <motion.div
         key={currentIndex}
         drag="x"
@@ -108,7 +114,11 @@ const Goals = () => {
           padding: "20px",
         }}
       >
-        <img src={items[currentIndex].img} className="w-[421px] h-[412px] object-cover" alt="" />
+        <img
+          src={items[currentIndex].img}
+          className="w-[421px] h-[412px] object-cover"
+          alt=""
+        />
         <h2 className="text-3xl text-center font-gothic">
           {items[currentIndex].title}
         </h2>

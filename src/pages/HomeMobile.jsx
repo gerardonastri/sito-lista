@@ -17,7 +17,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 
 const AboutCard = ({ title, text, bg, link }) => {
   return (
-    <a
+    <TransitionLink
       href={`/${link}`}
       className={`${
         bg === "white" ? "bg-white shadow-2xl" : "bg-primary-dark"
@@ -37,7 +37,7 @@ const AboutCard = ({ title, text, bg, link }) => {
       >
         {text}
       </p>
-    </a>
+    </TransitionLink>
   );
 };
 
@@ -49,7 +49,7 @@ const GoalCard = ({ title, text, img, link }) => {
         <h3 className="font-semibold text-xl text-left text-primary-dark">{title}</h3>
         {/* <p className="text-sm max-w-[80%] text-center">{text}</p> */}
       </div>
-      <a href="/goals" className="bg-primary-dark p-3 rounded-full flex items-center justify-center w-fit"><RxDoubleArrowRight className="text-white text-3xl" /></a>
+      <TransitionLink href="/goals" className="bg-primary-dark p-3 rounded-full flex items-center justify-center w-fit"><RxDoubleArrowRight className="text-white text-3xl" /></TransitionLink>
     </motion.div>
   );
 };

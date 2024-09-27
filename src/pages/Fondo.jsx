@@ -9,6 +9,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 import Fixbar from "../components/Fixbar";
 import { BiHomeAlt2 } from "react-icons/bi";
+import TransitionLink from "../utils/TransitionLink";
 
 
 const items = [
@@ -87,9 +88,14 @@ const Fondo = () => {
         ]}
       />
 
-      <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
-      Viribus <span className="text-primary-light">Unitis</span> 2.0
-      </h1>
+      <div className="flex flex-row-reverse items-center justify-between">
+        <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
+        Viribus <span className="text-primary-light">Unitis</span> 2.0
+        </h1>
+        <TransitionLink href="/home" className="pl-4">
+          <FaArrowLeftLong className="text-3xl font-gothic text-primary-dark" />
+        </TransitionLink>
+      </div>
       <motion.div
         key={currentIndex}
         drag="x"

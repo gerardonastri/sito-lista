@@ -1,5 +1,7 @@
 import React from "react";
 
+import TransitionLink from '../utils/TransitionLink'
+
 const Fixbar = ({ links }) => {
   const id = window.location.pathname.split("/")[1];
 
@@ -8,7 +10,7 @@ const Fixbar = ({ links }) => {
       {links?.map((item, i) => (
         <>
           {(item.link || item.link === "") ? (
-            <a
+            <TransitionLink 
               key={i}
               href={`/${item.link}`}
               className={`${
@@ -19,7 +21,7 @@ const Fixbar = ({ links }) => {
               <span className="text-white">
                 {item.link === id && item.link}
               </span>
-            </a>
+            </TransitionLink>
           ) : (
             <span
               key={i}

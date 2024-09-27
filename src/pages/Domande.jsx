@@ -7,7 +7,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 import Fixbar from "../components/Fixbar";
 import { BiHomeAlt2 } from "react-icons/bi";
-
+import TransitionLink from "../utils/TransitionLink";
 
 const BoxDomanda = ({ text }) => (
   <div className="w-full py-8 px-5 shadow-2xl rounded-3xl">
@@ -29,12 +29,12 @@ const Domande = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showOtherText, setShowOtherText] = useState(false);
 
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
   // Funzione per andare alla prossima domanda
   const nextQuestion = () => {
     if (currentQuestionIndex < domande.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setActive(0)
+      setActive(0);
     }
   };
 
@@ -42,11 +42,9 @@ const Domande = () => {
   const prevQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
-      setActive(1)
+      setActive(1);
     }
   };
-
-
 
   return (
     <div className="pt-8">
@@ -69,9 +67,14 @@ const Domande = () => {
         ]}
       />
 
-      <h1 className="text-primary-dark text-3xl font-gothic text-left mx-2">
-      Viribus <span className="text-primary-light">Unitis</span> 2.0
-      </h1>
+      <div className="flex flex-row-reverse items-center justify-between">
+        <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
+          Viribus <span className="text-primary-light">Unitis</span> 2.0
+        </h1>
+        <TransitionLink href="/home" className="pl-4">
+          <FaArrowLeftLong className="text-3xl font-gothic text-primary-dark" />
+        </TransitionLink>
+      </div>
       <div
         className={`${
           showOtherText ? "h-[250px]" : "h-[150px]"

@@ -8,9 +8,10 @@ import Fixbar from "../components/Fixbar";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { CiTimer } from "react-icons/ci";
 import { FaPeopleGroup } from "react-icons/fa6";
+import TransitionLink from "../utils/TransitionLink";
 
 const AboutCard = ({ img, name, link }) => (
-  <a href={`/about/${link}`} className="w-full rouned-t-[3rem]">
+  <TransitionLink href={`/about/${link}`} className="w-full rouned-t-[3rem]">
     <img
       src={img}
       className="w-full h-[250px] object-cover rounded-t-[3rem]"
@@ -22,7 +23,7 @@ const AboutCard = ({ img, name, link }) => (
         Canditato rappresentante d'istituto 2024 conn Virinus Unitis
       </p>
     </div>
-  </a>
+  </TransitionLink>
 );
 
 const About = () => {

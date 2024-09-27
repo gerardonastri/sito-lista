@@ -22,10 +22,10 @@ const TransitionLink = ({children, href, className, ...props}) => {
         const body = document.querySelector("body")
         body?.classList.add("page-transition")
         //sleep for some time
-        await sleep(500);
+        await sleep(300);
 
         navigate(href);
-        await sleep(500);
+        await sleep(300);
         body?.classList.remove("page-transition")
     }
 

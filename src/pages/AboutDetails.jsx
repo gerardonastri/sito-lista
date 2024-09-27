@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 import Fixbar from "../components/Fixbar";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { CiTimer } from "react-icons/ci";
-import { FaPeopleGroup } from "react-icons/fa6";
+import { FaArrowLeftLong, FaPeopleGroup } from "react-icons/fa6";
+import TransitionLink from "../utils/TransitionLink";
 
 const AboutDetails = () => {
   const { id } = useParams();
@@ -29,9 +30,14 @@ const AboutDetails = () => {
         ]}
       />
 
-      <h3 className="text-primary-dark text-2xl font-gothic text-left mx-2">
-      Viribus <span className="text-primary-light">Unitis</span> 2.0
-      </h3>
+<div className="flex flex-row-reverse items-center justify-between">
+        <h1 className="text-left mx-2 font-bold font-gothic text-2xl text-primary-dark">
+        Viribus <span className="text-primary-light">Unitis</span> 2.0
+        </h1>
+        <TransitionLink href="/about" className="pl-4">
+          <FaArrowLeftLong className="text-3xl font-gothic text-primary-dark" />
+        </TransitionLink>
+      </div>
       <h1 className="text-primary-dark mt-16 text-4xl font-gothic text-center mb-3">
         {aboutDetails[id - 1].name}
       </h1>
