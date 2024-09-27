@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import img from "../assets/sam-3d.png";
 import { SlArrowRight } from "react-icons/sl";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { RxDoubleArrowRight } from "react-icons/rx";
 
 import TransitionLink from "../utils/TransitionLink";
@@ -87,7 +87,11 @@ const AboutCard = ({ title, text, bg, link }) => {
 
 const GoalCard = ({ title, bg, img, link }) => {
   return (
-    <motion.a href={link} style={{background: bg}} className="relative flex flex-col justify-between items-start min-w-[200px] min-h-[200px] rounded-[20px] shadow-2xl overflow-hidden p-[20px] text-center">
+    <motion.a
+      href={link}
+      style={{ background: bg }}
+      className="relative flex flex-col justify-between items-start min-w-[200px] min-h-[200px] rounded-[20px] shadow-2xl overflow-hidden p-[20px] text-center"
+    >
       <img
         src={img}
         className="w-[120px] h-[120px] object-cover absolute bottom-0 right-[-15%]"
@@ -110,32 +114,27 @@ const GoalCard = ({ title, bg, img, link }) => {
 };
 
 const HomeMobile = () => {
-  const cards = [
-    {
-      title: "Distributori di acqua gratuiti",
-      text: "la fondamentale importanza dei ditributori",
-      link: "/goals",
-      img: goalImg1,
-    },
-    {
-      title: "Distributori di acqua gratuiti",
-      text: "la fondamentale importanza dei ditributori",
-      link: "/goals",
-      img: goalImg1,
-    },
-    {
-      title: "Distributori di acqua gratuiti",
-      text: "la fondamentale importanza dei ditributori",
-      link: "/goals",
-      img: goalImg1,
-    },
-    {
-      title: "Distributori di acqua gratuiti",
-      text: "la fondamentale importanza dei ditributori",
-      link: "/goals",
-      img: goalImg1,
-    },
-  ];
+  const controls = useAnimation();
+  const carouselRef = useRef();
+  const [carouselWidth, setCarouselWidth] = useState(0);
+
+  // Creiamo una copia duplicata per l'effetto infinito
+  const duplicatedGoals = [...goals, ...goals];
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      const totalWidth = carouselRef.current.scrollWidth;
+      const visibleWidth = carouselRef.current.offsetWidth;
+      setCarouselWidth(totalWidth - visibleWidth);
+    }
+  }, [carouselRef]);
+
+  const handleDragEnd = (event, info) => {
+    // Se il carosello è trascinato quasi alla fine, riportalo all'inizio
+    if (Math.abs(info.point.x) >= carouselWidth) {
+      controls.start({ x: 0, transition: { duration: 0 } });
+    }
+  };
 
   return (
     <div className="py-10 pb-[100px]">
@@ -196,11 +195,13 @@ const HomeMobile = () => {
           vedi tutti <SlArrowRight />
         </a>
       </div>
-      <div className="p-[20px] overflow-hidden">
+      <div className="p-[20px] overflow-hidden" ref={carouselRef}>
         <motion.div
           drag="x"
-          dragConstraints={{ right: 0, left: -600 }}
-          className="flex gap-[20px] cursor-grab"
+          dragConstraints={{ right: 0, left: -carouselWidth }}
+          className="flex gap-[20px] cursor-grab pr20"
+          animate={controls}
+          onDragEnd={handleDragEnd} // Aggiungiamo l'handler per l'evento di fine trascinamento
         >
           {goals.map((card, index) => (
             <motion.div className="card" key={index}>
