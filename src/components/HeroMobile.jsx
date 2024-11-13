@@ -11,7 +11,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 
 const HeroMobile = () => {
   // Crea un nuovo oggetto Date usando i componenti estratti
-  const targetDate = new Date(2024, 10, 10, 10, 0, 0);
+  const targetDate = new Date(2024, 10, 24, 10, 0, 0);
   const now = new Date();
 
   // Differenza in millisecondi
